@@ -4,25 +4,33 @@
 
         describe('Testing studentModal Controller', function(){
             beforeEach(module('MockApp'));
-            var _$scope, _$controller, _$uibModalInstance ,_mockStudentService;
+            var _$scope, _$controller ,_mockStudentService ,_newStudent;
+            var _$uibModalInstance ={
+                close: angular.noop,
+                dismiss: angular.noop
+            };
 
-            beforeEach(inject(function($controller,$rootScope,$uibModalInstance, StudentService){
+            beforeEach(inject(function($controller,$rootScope, StudentService ){
                 _$scope=$rootScope.$new();
-                _$uibModalInstance = $uibModalInstance;
                 _mockStudentService= StudentService;
-                _$controller = $controller('StudentModalController as stdModalCtrl',{
-                    '$scope': _$scope
+                _newStudent = newStudent;
+                _$controller = $controller('DeleteModalController as deleteModalCtrl',{
+                    $scope: _$scope,
+                    $uibModalInstance: _$uibModalInstance,
+                    //newStudent = _newStudent,
                 });
             }));
 
             describe('testing the components',function(){
-                it('should call ok function', function(){
-
-                })
+                // it('should call ok function', function(){
+                //     expect(true).toBeTruthy();
+                // })
 
 
                 it('should call cancel function', function(){
-
+                    // spyOn(_$uibModalInstance,'dismiss').and.callThrough();
+                    // _$controller.cancel();
+                    // expect(_$uibModalInstance.dismiss).toHaveBeenCalled();
                 });
             })
         })

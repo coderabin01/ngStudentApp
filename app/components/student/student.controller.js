@@ -3,19 +3,23 @@
         angular.module('MockApp')
             .controller('StudentController', StudentController);
 
-        StudentController.$inject = ['$scope','$uibModal','StudentService'];
+        StudentController.$inject = ['$uibModal','StudentService'];
 
-        function StudentController($scope, $uibModal , StudentService) {
+        function StudentController($uibModal , StudentService) {
 
                 var vm = this;
+                vm.value = 1;
 
                 vm.$onInit = function () {
                     vm.students = StudentService.list();
                 }
 
+                vm.message= '';
+                vm.closeThisAlert = function(){
+                    vm.message = false;
+                }
+
                 vm.open = function (student) {
-                    vm.message= '';
-                    vm.messageType = '';
 
                     var modalInstance = $uibModal.open({
                         ariaLabelledBy: 'modal-title',
@@ -31,13 +35,10 @@
                     });
 
                     modalInstance.result.then(function (result) {
-                        // console.log('result: ' + result.studentName);
-                        // console.log('resulType: ' + result.actionType);
-                        vm.message = result.studentName;
                         if(result.actionType == 'Add Student')
-                            vm.messageType = 'add';
+                            vm.message = result.studentName + " has been added";
                         else
-                            vm.messageType = 'edit';
+                            vm.message = result.studentName + " has been edited";
                     }, function () {
                         console.info('Modal dismissed at: ' + new Date());
                     });
@@ -45,10 +46,7 @@
                 }
 
             vm.openDelete = function (student) {
-                vm.message = '';
-                vm.messageType = '';
-
-                var dmodalInstance = $uibModal.open({
+                var modalInstance = $uibModal.open({
                     ariaLabelledBy: 'modal-title',
                     ariaDescribedBy: 'modal-body',
                     templateUrl: 'components/modalComponent/deleteModal.html',
@@ -61,11 +59,9 @@
                     }
                 });
 
-                dmodalInstance.result.then(function (result) {
+                modalInstance.result.then(function (result) {
                     console.log('result: ' + result);
-                    vm.message = result;
-                    vm.messageType = 'delete';
-                    // $scope.schedule = angular.fromJson(scheduleJSON);
+                    vm.message = result + " has been deleted";
                 }, function () {
                     console.info('Modal dismissed at: ' + new Date());
                 });

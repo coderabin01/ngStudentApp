@@ -4,25 +4,37 @@
 
         describe('Testing studentModal Controller', function(){
             beforeEach(module('MockApp'));
-            var _$scope, _$controller, _$uibModalInstance ,_mockStudentService;
+            var _$scope, _$controller ,_mockStudentService;
+            var _$uibModalInstance ={
+                close: angular.noop,
+                dismiss: angular.noop
+            };
+            var newStudent = {};
 
-            beforeEach(inject(function($controller,$rootScope,$uibModalInstance, StudentService){
+            beforeEach(inject(function($controller,$rootScope, StudentService ){
                 _$scope=$rootScope.$new();
-                _$uibModalInstance = $uibModalInstance;
                 _mockStudentService= StudentService;
                 _$controller = $controller('StudentModalController as stdModalCtrl',{
-                   '$scope': _$scope
-                });
+                   $scope: _$scope,
+                    $uibModalInstance: _$uibModalInstance,
+                    _mockStudentService : StudentService,
+                    newStudent : newStudent,
+                }
+                );
             }));
 
             describe('testing the components',function(){
-                // it('should call ok function', function(){
-                //     expect(true).toBeTruthy();
-                // })
+                it('should call ok function', function(){
+                    spyOn(_mockStudentService,'save').and.callThrough();
+                    spyOn(_$uibModalInstance,'close').and.callThrough();
+                    _$controller.ok();
+                    expect(_mockStudentService.save).toHaveBeenCalled();
+                    expect(_$uibModalInstance.close).toHaveBeenCalled();
+                })
 
 
                 it('should call cancel function', function(){
-                    spyOn(_$uibModalInstance,'dismiss').and.callThrough();
+                     spyOn(_$uibModalInstance,'dismiss').and.callThrough();
                     _$controller.cancel();
                     expect(_$uibModalInstance.dismiss).toHaveBeenCalled();
                 });

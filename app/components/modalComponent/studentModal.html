@@ -6,7 +6,7 @@
             <div class="form-group">
                 <label for="usr">First Name:*</label>
                 <input type="text" class="form-control" id="usr" name="fname" ng-model="studentModalCtrl.newstudent.fname" ng-pattern="/^[a-zA-Z ]*$/" required>
-                <div style="color:red" ng-show="studentForm.fname.$touched && studentForm.fname.$dirty && studentForm.fname.$invalid">
+                <div style="color:red" ng-show="studentForm.fname.$dirty && studentForm.fname.$invalid">
                     <div ng-show="studentForm.fname.$invalid" ng-hide="studentForm.fname.$error.required">Firstname should only contain alphabets.</div>
                   <div ng-show="studentForm.fname.$error.required">Firstname is required.</div>
                 </div>

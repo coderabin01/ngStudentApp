@@ -4,7 +4,11 @@
         padding:10px;
     }
 </style>
-<div class = "container">
+<div class = "container" style="margin-top:20px">
+
+    <div class="row">
+        <input type="text" id="phonenumber" ng-model="phonenumber" format-phone>
+    </div>
 
     <div class="row">
         <div class="col-sm-12 col-lg-6">
@@ -18,18 +22,8 @@
         </div>
     </div>
 
-    <div class="row">
-        <div ng-if="studentCtrl.message" class="messageBox">
-            <div ng-show="studentCtrl.messageType == 'delete'">
-                <b>{{studentCtrl.message}}</b> has been deleted
-            </div>
-            <div ng-show="studentCtrl.messageType == 'add'">
-                <b>{{studentCtrl.message}}</b> has been added
-            </div>
-            <div ng-show="studentCtrl.messageType == 'edit'">
-                <b>{{studentCtrl.message}}</b> has been edit.
-            </div>
-        </div>
+    <div class="">
+        <div uib-alert class="alert-success" close="studentCtrl.closeThisAlert()" ng-if="studentCtrl.message">{{studentCtrl.message}}</div>
     </div>
 
 
@@ -50,6 +44,9 @@
             <td>{{ student.email }}</td>
             <td>{{ student.address }}</td>
             <td> <a ng-click="studentCtrl.edit(student)">edit</a> | <a href="javascript:void(0)" ng-click="studentCtrl.delete(student)">delete</a></td>
+        </tr>
+        <tr ng-show="(studentCtrl.students | filter: search).length == 0">
+            <td colspan="5"><center><b>No results !!!!</b></center></td>
         </tr>
         </tbody>
     </table>

@@ -20,10 +20,10 @@ module.exports = function(config) {
             //spec files
             // 'spec/config/config.spec.js',
             //  'specs/components/login/login.spec.js',
-            //'specs/components/student/student.controller.spec.js',
-            //'specs/components/jasmine/testpractise.spec.js',
+            'specs/components/student/student.controller.spec.js',
+            // 'specs/components/jasmine/testpractise.spec.js',
             //'specs/components/student/student.service.spec.js',
-            'specs/components/modalComponent/studentModal.controller.spec.js',
+            // 'specs/components/modalComponent/studentModal.controller.spec.js',
         ],
 
         autoWatch: true,
@@ -40,13 +40,36 @@ module.exports = function(config) {
             'karma-firefox-launcher',
             'karma-chrome-launcher',
             'karma-jasmine',
-            'karma-junit-reporter'
+            'karma-junit-reporter',
+            'karma-coverage'
         ],
 
         junitReporter: {
             outputFile: 'test_out/unit.xml',
             suite: 'unit'
         },
-        singleRun: true
+        singleRun: true,
+
+        // coverage reporter generates the coverage
+        reporters: ['progress', 'coverage'],
+
+        preprocessors: {
+            // source files, that you wanna generate coverage for
+            // do not include tests or libraries
+            // (these files will be instrumented by Istanbul)
+            '../app/components/**/*.js': ['coverage'],
+            '../app/components/app*.js':['coverage']
+        },
+
+        // optionally, configure the reporter
+        coverageReporter: {
+            type : 'html',
+            dir : 'coverage/'
+        },
+
+        ngHtml2JsPreprocessor: {
+            stripPrefix: '../app/',
+            moduleName: 'dir-templates'
+        },
     });
 };
