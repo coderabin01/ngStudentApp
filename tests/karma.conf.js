@@ -31,14 +31,11 @@ module.exports = function(config) {
         frameworks: ['jasmine'],
 
         browsers: [
-            'PhantomJS',
-            // 'Chrome'
+            'PhantomJS'
         ],
 
         plugins: [
             'karma-phantomjs-launcher',
-            'karma-firefox-launcher',
-            'karma-chrome-launcher',
             'karma-jasmine',
             'karma-junit-reporter',
             'karma-coverage'
@@ -67,9 +64,6 @@ module.exports = function(config) {
             dir : 'coverage/'
         },
 
-        ngHtml2JsPreprocessor: {
-            stripPrefix: '../app/',
-            moduleName: 'dir-templates'
-        },
+        ngHtml2JsPreprocessor: { prependPrefix: '/', moduleName: 'templates' }
     });
 };
