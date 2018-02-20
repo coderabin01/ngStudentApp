@@ -80,9 +80,10 @@
                     var mockModalInstance = {result: deferred.promise};
                     spyOn(_$uibModal,'open').and.returnValue(mockModalInstance);
                     vm.openDelete();
-                    _$scope.$apply();
+                    _$scope.$digest();
                     expect(_$uibModal.open).toHaveBeenCalled();
                 })
+
                 it('should call edit function', function(){
                     var vm = _$controller();
                     spyOn(_$uibModal,'open').and.callThrough();
@@ -104,35 +105,4 @@
     }
 )();
 
-/*
 
-//Testing delete function
-it('should call delete function',function(){
-    spyOn(_$uibModal,'open').and.callThrough();
-    var vm = _$controller();
-    vm.delete();
-    expect(_$uibModal.open).toHaveBeenCalled();
-})
-
-//Testing open modal function
-it('should call open function', function(){
-    var deferred = _$q.defer('sadasdasd');
-    deferred.resolve();
-    spyOn(_$uibModal, 'open').and.returnValue(deferred.promise);
-    var vm = _$controller();
-    vm.open();
-    _$scope.$apply();
-    expect(_$uibModal.open).toHaveBeenCalled();
-    //spyOn(modalInstance,'result').and.callThrough();
-
-
-
-})
-
-it('should call edit function', function(){
-
-    var vm = _$controller();
-    spyOn(_$uibModal,'open').and.callThrough();
-    vm.edit();
-    expect(_$uibModal.open).toHaveBeenCalled();
-});*/

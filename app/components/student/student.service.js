@@ -7,7 +7,7 @@
         StudentService.$inject = [];
         
         function StudentService() {
-                var uid = 3;
+                var uid = 4;
 
                 var students = [{
                     'id': 1,
@@ -21,6 +21,13 @@
                         'fname': 'xyz',
                         'lname':'abc',
                         'email': 'naga.babin01@gmail.com',
+                        'address': 'Kathmandu'
+                    },
+                    {
+                        'id': 3,
+                        'fname': 'Aayush',
+                        'lname':'Regmi',
+                        'email': 'ayush.regmi@gmail.com',
                         'address': 'Kathmandu'
                     }
                 ];

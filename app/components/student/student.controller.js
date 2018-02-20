@@ -8,7 +8,7 @@
         function StudentController($uibModal , StudentService) {
 
                 var vm = this;
-                vm.value = 1;
+                vm.sortReverse = false ;
 
                 vm.$onInit = function () {
                     vm.students = StudentService.list();
