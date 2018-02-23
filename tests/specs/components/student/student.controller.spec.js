@@ -34,7 +34,6 @@
                     expect(vm.message).toBe(false);
                 })
 
-/*
                 //Writing test for open function
                 it('Testing open function for true case', function () {
                     var vm  = _$controller();
@@ -44,11 +43,11 @@
                     var mockModalInstance = {result: deferred.promise};
                     spyOn(_$uibModal,'open').and.returnValue(mockModalInstance);
                     vm.open();
-                    _$scope.$apply();
+                    _$scope.$digest();
                     expect(_$uibModal.open).toHaveBeenCalled();
-                })*/
+                })
 
-                /*it('Testing open function for false case', function () {
+                it('Testing open function for false case', function () {
                     var vm  = _$controller();
                     var modalInstance = {studentName:'rabin',actionType:'Edit Student'};
                     var deferred = _$q.defer();
@@ -56,7 +55,7 @@
                     var mockModalInstance = {result: deferred.promise};
                     spyOn(_$uibModal,'open').and.returnValue(mockModalInstance);
                     vm.open();
-                    _$scope.$apply();
+                    _$scope.$digest();
                     expect(_$uibModal.open).toHaveBeenCalled();
                 })
 
@@ -68,11 +67,12 @@
                     var mockModalInstance = {result: deferred.promise};
                     spyOn(_$uibModal,'open').and.returnValue(mockModalInstance);
                     vm.open();
-                    _$scope.$apply();
+                    _$scope.$digest();
                     expect(_$uibModal.open).toHaveBeenCalled();
-                })*/
+                })
 
-                it('Testing open function for delete modal', function () {
+                // Writing Test for Opening Delete Modal
+                it('Testing open delete modal function for success', function () {
                     var vm  = _$controller();
                     var modalInstance = {};
                     var deferred = _$q.defer();
@@ -84,6 +84,19 @@
                     expect(_$uibModal.open).toHaveBeenCalled();
                 })
 
+                it('Testing open delete modal function for failure', function () {
+                    var vm  = _$controller();
+                    //var modalInstance = {};
+                    var deferred = _$q.defer();
+                    deferred.reject();
+                    var mockModalInstance = {result: deferred.promise};
+                    spyOn(_$uibModal,'open').and.returnValue(mockModalInstance);
+                    vm.openDelete();
+                    _$scope.$digest();
+                    expect(_$uibModal.open).toHaveBeenCalled();
+                })
+
+                //Writing test for Edit Function
                 it('should call edit function', function(){
                     var vm = _$controller();
                     spyOn(_$uibModal,'open').and.callThrough();

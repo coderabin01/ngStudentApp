@@ -9,9 +9,21 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
+
 <body ng-app="MockApp">
+
+<nav class="navbar navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" ui-sref="student">Student</a>
+      <a class="nav-item nav-link" ui-sref="user">Teachers</a>
+    </div>
+  </div>
+</nav>
+
   <ui-view></ui-view>
 
   <!-- In production use:
@@ -31,5 +43,12 @@
   <script src="components/student/student.service.js"></script>
   <script src="components/modalComponent/studentModal.controller.js"></script>
   <script src="components/modalComponent/deleteModal.controller.js"></script>
+
+  <script src="components/user/user.controller.js"></script>
+  <script src="components/user/user.service.js"></script>
+  <script src="components/modalComponent/teacher/teacherModal.controller.js"></script>
+
+  <script src="components/directives/address.js"></script>
+  <script src="components/directives/format-phone.js"></script>
 </body>
 </html>

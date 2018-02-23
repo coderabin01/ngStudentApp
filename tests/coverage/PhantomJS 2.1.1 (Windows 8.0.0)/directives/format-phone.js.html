@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for modalComponent\deleteModal.controller.js</title>
+    <title>Code coverage report for directives\format-phone.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -16,18 +16,18 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../index.html">all files</a> / <a href="index.html">modalComponent/</a> deleteModal.controller.js
+      <a href="../index.html">all files</a> / <a href="index.html">directives/</a> format-phone.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">36.36% </span>
+        <span class="strong">25% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>4/11</span>
+        <span class='fraction'>4/16</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">25% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>1/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">36.36% </span>
+        <span class="strong">25% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>4/11</span>
+        <span class='fraction'>4/16</span>
       </div>
     </div>
   </div>
@@ -67,24 +67,38 @@
 22
 23
 24
-25</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+25
+26
+27
+28
+29
+30
+31
+32</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -94,27 +108,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(
     function(){
         angular.module('MockApp')
-            .controller('DeleteModalController', DeleteModalController);
+            .directive('formatPhone',formatPhone);
 &nbsp;
-        DeleteModalController.$inject = ['$scope', '$uibModalInstance', 'StudentService', 'stud'];
-&nbsp;
-<span class="fstat-no" title="function not covered" >        function DeleteModalController($scope, $uibModalInstance, StudentService ,stud) {</span>
-<span class="cstat-no" title="statement not covered" >            var vm = this;</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >            vm.studentName = stud.fname + " " + stud.lname;</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >            vm.ok = <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >                StudentService.delete(stud.id);</span>
-<span class="cstat-no" title="statement not covered" >                $uibModalInstance.close(vm.studentName);</span>
+<span class="fstat-no" title="function not covered" >        function formatPhone(){</span>
+<span class="cstat-no" title="statement not covered" >            var directive = {</span>
+                link: link,
+                restrict: 'EA'
             };
+<span class="cstat-no" title="statement not covered" >            return directive;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            vm.cancel = <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >                $uibModalInstance.dismiss('cancel');</span>
-            };
+<span class="fstat-no" title="function not covered" >            function link(scope, elem, attrs) {</span>
+<span class="cstat-no" title="statement not covered" >                console.log('format phone directive');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                elem.bind('keyup',<span class="fstat-no" title="function not covered" >function(e){</span></span>
+<span class="cstat-no" title="statement not covered" >                    var value = elem.val()</span>
+<span class="cstat-no" title="statement not covered" >                    value = value.toString();</span>
+<span class="cstat-no" title="statement not covered" >                    value = value.replace(/[^0-9]/g, '');</span>
+<span class="cstat-no" title="statement not covered" >                    if(value.length &gt; 5){</span>
+<span class="cstat-no" title="statement not covered" >                        value = value.slice(0,5) + "-" + value.slice(5);</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    if(value.length &gt; 11){</span>
+<span class="cstat-no" title="statement not covered" >                        value = value.slice(0,11);</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    elem.val(value);</span>
+                })
+            }
         }
     }
 )();
-&nbsp;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->

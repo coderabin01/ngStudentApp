@@ -23,6 +23,12 @@
                     controller:'StudentController as studentCtrl'
                 })
 
+                .state('user',{
+                    url:'/user',
+                    templateUrl:'components/user/user.html',
+                    controller:'UserController as userCtrl'
+                });
+
                 // .state('test',{
                 //     url:'/test',
                 //     templateUrl:'components/jasmine/test.html',

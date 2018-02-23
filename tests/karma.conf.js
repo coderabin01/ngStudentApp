@@ -18,12 +18,11 @@ module.exports = function(config) {
             '../app/components/**/*.js',
 
             //spec files
-            // 'spec/config/config.spec.js',
-            //  'specs/components/login/login.spec.js',
-            'specs/components/student/student.controller.spec.js',
+
             // 'specs/components/jasmine/testpractise.spec.js',
-            //'specs/components/student/student.service.spec.js',
-            // 'specs/components/modalComponent/studentModal.controller.spec.js',
+            'specs/components/student/student.controller.spec.js',
+            'specs/components/student/student.service.spec.js',
+            'specs/components/modalComponent/studentModal.controller.spec.js',
         ],
 
         autoWatch: true,
@@ -67,9 +66,9 @@ module.exports = function(config) {
             dir : 'coverage/'
         },
 
-        ngHtml2JsPreprocessor: {
-            stripPrefix: '../app/',
-            moduleName: 'dir-templates'
-        },
+        // ngHtml2JsPreprocessor: {
+        //     stripPrefix: '../app/',
+        //     moduleName: 'dir-templates'
+        // },
     });
 };

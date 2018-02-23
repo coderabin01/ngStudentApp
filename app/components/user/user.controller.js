@@ -1,20 +1,33 @@
 (
     function () {
         angular.module('MockApp')
-            .controller('StudentController', StudentController);
+            .controller('UserController', UserController);
 
-        StudentController.$inject = ['$uibModal','StudentService'];
+        UserController.$inject = ['$uibModal','UserService'];
 
-        function StudentController($uibModal , StudentService) {
+        function UserController($uibModal , UserService) {
 
                 var vm = this;
                 vm.sortType = 'fname';
                 vm.sortReverse = false ;
                 vm.message = '';
 
+
                 //Function to show the list of students
                 vm.$onInit = function () {
-                    vm.students = StudentService.list();
+
+                    var getList = UserService.list();
+                    console.log(getList);
+
+                    getList.then(
+                        function (response) {
+                            console.log(response);
+                            vm.students = response;
+                        },
+                        function (error) {
+                            console.log(error);
+                        }
+                    );
                 }
 
                 // Function to close the alert
@@ -32,8 +45,8 @@
                     var modalInstance = $uibModal.open({
                         ariaLabelledBy: 'modal-title',
                         ariaDescribedBy: 'modal-body',
-                        templateUrl: 'components/modalComponent/studentModal.html',
-                        controller: 'StudentModalController as studentModalCtrl',
+                        templateUrl: 'components/modalComponent/teacher/teacherModal.html',
+                        controller: 'UserModalController as teacherModalCtrl',
                         size: 'md',
                         resolve:{
                             newStudent:function(){
@@ -50,7 +63,6 @@
                     }, function () {
                         console.info('Modal dismissed at: ' + new Date());
                     });
-
                 }
 
                 //open Delete Student Modal
