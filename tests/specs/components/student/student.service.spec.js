@@ -28,7 +28,6 @@
                 it('should call save function if newStudent is passed',function(){
                     spyOn(_$mockStudentService, 'save').and.callThrough();
                     var student = {
-                        'id': ''
                     };
                     _$mockStudentService.save(student);
                     expect(_$mockStudentService.save).toHaveBeenCalled();

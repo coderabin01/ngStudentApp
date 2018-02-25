@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">93.33% </span>
+        <span class="strong">26.67% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>14/15</span>
+        <span class='fraction'>4/15</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>1/2</span>
+        <span class='fraction'>0/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">25% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>4/4</span>
+        <span class='fraction'>1/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">93.33% </span>
+        <span class="strong">26.67% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>14/15</span>
+        <span class='fraction'>4/15</span>
       </div>
     </div>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -81,23 +81,23 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -110,24 +110,24 @@
 &nbsp;
         StudentModalController.$inject = ['$scope', '$uibModalInstance', 'StudentService', 'newStudent'];
 &nbsp;
-        function StudentModalController($scope, $uibModalInstance, StudentService, newStudent) {
-            var vm = this;
+<span class="fstat-no" title="function not covered" >        function StudentModalController($scope, $uibModalInstance, StudentService, newStudent) {</span>
+<span class="cstat-no" title="statement not covered" >            var vm = this;</span>
 &nbsp;
-            <span class="missing-if-branch" title="else path not taken" >E</span>if(newStudent)
-                vm.modalTitle="Edit Student";
+<span class="cstat-no" title="statement not covered" >            if(newStudent)</span>
+<span class="cstat-no" title="statement not covered" >                vm.modalTitle="Edit Student";</span>
             else
 <span class="cstat-no" title="statement not covered" >                vm.modalTitle="Add Student";</span>
 &nbsp;
-            vm.newstudent=angular.copy(newStudent);
+<span class="cstat-no" title="statement not covered" >            vm.newstudent=angular.copy(newStudent);</span>
 &nbsp;
-            vm.ok = function () {
-                StudentService.save(vm.newstudent);
-                vm.studentName = vm.newstudent.fname +" "+ vm.newstudent.lname;
-                $uibModalInstance.close({studentName:vm.studentName,actionType:vm.modalTitle});
+<span class="cstat-no" title="statement not covered" >            vm.ok = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                StudentService.save(vm.newstudent);</span>
+<span class="cstat-no" title="statement not covered" >                vm.studentName = vm.newstudent.fname +" "+ vm.newstudent.lname;</span>
+<span class="cstat-no" title="statement not covered" >                $uibModalInstance.close({studentName:vm.studentName,actionType:vm.modalTitle});</span>
             };
 &nbsp;
-            vm.cancel = function () {
-                $uibModalInstance.dismiss('cancel');
+<span class="cstat-no" title="statement not covered" >            vm.cancel = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                $uibModalInstance.dismiss('cancel');</span>
             };
         }
     }
@@ -139,7 +139,7 @@
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 23 2018 11:50:55 GMT+0545 (Nepal Standard Time)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 25 2018 15:52:11 GMT+0545 (Nepal Standard Time)
 </div>
 </div>
 <script src="../prettify.js"></script>

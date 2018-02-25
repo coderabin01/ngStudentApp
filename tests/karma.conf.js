@@ -19,10 +19,12 @@ module.exports = function(config) {
 
             //spec files
 
-            // 'specs/components/jasmine/testpractise.spec.js',
-            'specs/components/student/student.controller.spec.js',
-            'specs/components/student/student.service.spec.js',
-            'specs/components/modalComponent/studentModal.controller.spec.js',
+            // 'specs/components/student/student.controller.spec.js',
+            // 'specs/components/student/student.service.spec.js',
+            // 'specs/components/modalComponent/studentModal.controller.spec.js',
+            // 'specs/components/modalComponent/deleteModal.controller.spec.js',
+            // 'specs/components/user/user.controller.spec.js',
+            'specs/components/user/user.service.spec.js',
         ],
 
         autoWatch: true,

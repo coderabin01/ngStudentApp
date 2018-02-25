@@ -8,7 +8,7 @@
         function UserController($uibModal , UserService) {
 
                 var vm = this;
-                vm.sortType = 'fname';
+                vm.sortType = 'name';
                 vm.sortReverse = false ;
                 vm.message = '';
 
@@ -17,11 +17,9 @@
                 vm.$onInit = function () {
 
                     var getList = UserService.list();
-                    console.log(getList);
 
                     getList.then(
                         function (response) {
-                            console.log(response);
                             vm.students = response;
                         },
                         function (error) {

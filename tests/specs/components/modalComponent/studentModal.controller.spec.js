@@ -17,7 +17,7 @@
                 _$controller = $controller('StudentModalController as stdModalCtrl',{
                    $scope: _$scope,
                     $uibModalInstance: _$uibModalInstance,
-                    _mockStudentService : StudentService,
+                    //_mockStudentService : StudentService,
                     newStudent : newStudent,
                 }
                 );
