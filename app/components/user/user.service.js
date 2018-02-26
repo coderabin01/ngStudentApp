@@ -8,6 +8,7 @@
         
         function UserService($http , $q) {
                 var uid = 1;
+                var vm = this;
                 var students=[];
 
                 this.list = function(){

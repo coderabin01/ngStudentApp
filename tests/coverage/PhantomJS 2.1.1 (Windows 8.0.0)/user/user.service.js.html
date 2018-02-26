@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">61.54% </span>
+        <span class="strong">85.19% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>16/26</span>
+        <span class='fraction'>23/27</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">33.33% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/6</span>
+        <span class='fraction'>2/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">44.44% </span>
+        <span class="strong">77.78% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>4/9</span>
+        <span class='fraction'>7/9</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">61.54% </span>
+        <span class="strong">85.19% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>16/26</span>
+        <span class='fraction'>23/27</span>
       </div>
     </div>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -92,7 +92,8 @@
 47
 48
 49
-50</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+50
+51</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
@@ -101,40 +102,41 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
 <span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -151,6 +153,7 @@
         
         function UserService($http , $q) {
                 var uid = 1;
+                var vm = this;
                 var students=[];
 &nbsp;
                 this.list = function(){
@@ -163,27 +166,27 @@
                         students = angular.copy(results);
                         uid = students.length;
                         deferred.resolve(students);
-                    },<span class="fstat-no" title="function not covered" >function (error){</span>
-<span class="cstat-no" title="statement not covered" >                        deferred.reject(error);</span>
+                    },function (error){
+                        deferred.reject(error);
                     });
                     return deferred.promise;
                 }
 &nbsp;
-                this.save = <span class="fstat-no" title="function not covered" >function(newstudent){</span>
-<span class="cstat-no" title="statement not covered" >                    if(newstudent.id == null) {</span>
-<span class="cstat-no" title="statement not covered" >                        newstudent.id = ++uid;</span>
-<span class="cstat-no" title="statement not covered" >                        students.push(newstudent);</span>
+                this.save = function(newstudent){
+                    if(newstudent.id == null) {
+                        newstudent.id = ++uid;
+                        students.push(newstudent);
                     }
                     else{
-<span class="cstat-no" title="statement not covered" >                        angular.forEach(students, <span class="fstat-no" title="function not covered" >function(eachStudent, index){</span></span>
+                        angular.forEach(students, <span class="fstat-no" title="function not covered" >function(eachStudent, index){</span>
 <span class="cstat-no" title="statement not covered" >                            if(eachStudent.id == newstudent.id)</span>
 <span class="cstat-no" title="statement not covered" >                                students[index] = newstudent;</span>
                         })
                     }
                 }
 &nbsp;
-                this.delete = <span class="fstat-no" title="function not covered" >function (id) {</span>
-<span class="cstat-no" title="statement not covered" >                    angular.forEach(students,<span class="fstat-no" title="function not covered" >function(eachStudent,index){</span></span>
+                this.delete = function (id) {
+                    angular.forEach(students,<span class="fstat-no" title="function not covered" >function(eachStudent,index){</span>
 <span class="cstat-no" title="statement not covered" >                        if(eachStudent.id == id)</span>
 <span class="cstat-no" title="statement not covered" >                            students.splice(index,1);</span>
                     })
@@ -196,7 +199,7 @@
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 25 2018 15:52:11 GMT+0545 (Nepal Standard Time)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Feb 26 2018 12:24:12 GMT+0545 (Nepal Standard Time)
 </div>
 </div>
 <script src="../prettify.js"></script>

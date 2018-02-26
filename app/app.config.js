@@ -3,10 +3,13 @@
         angular.module('MockApp')
             .config(config);
 
-        config.$inject = ['$stateProvider', '$urlRouterProvider'];
+        config.$inject = ['$stateProvider', '$urlRouterProvider','$qProvider'];
 
-        function config($stateProvider, $urlRouterProvider) {
-            //Route to login page.
+        function config($stateProvider, $urlRouterProvider ,$qProvider) {
+
+            $qProvider.errorOnUnhandledRejections(false);
+
+            //Route to home page.
             $urlRouterProvider.otherwise('/student');
 
             //States in the application
