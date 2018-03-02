@@ -20,33 +20,13 @@
 
             describe('Testing the components',function(){
                 it('Should run the $onInit function',function(){
-                     // $httpBackend.when('GET', url).respond();
-                   // var results = _mockUserService.list();
-                   //  // console.log(result);
-                   //  _$scope.$digest();
-                   //  $httpBackend.flush();
-
-                    var modalInstance = {};
-                    var deferred = _$q.defer();
-                    deferred.resolve(modalInstance);
-                    var mockModalInstance = {response:deferred.promise};
-
                     var vm = _$controller;
-                    // // vm.teachers = [{},{}];
-                    // spyOn(vm.$onInit(),'then').and.callThrough();
-                    // _mockUserService.list();
-                    // // //expect(vm.teachers.length).toEqual();
-                    // vm.$onInit();
-                    // // _$scope.$apply();
-                    // expect(vm.$onInit().list).toHaveBeenCalled();
-                    //
-
-                    //expect(vm.students).toBe(response);
-
-                    vm.$onInit.then(function(){
-                        console.log('success');
-                    });
-                })
+                    spyOn(_mockUserService,'list').and.returnValue(_$q.when({id:'1'}));
+                    vm.$onInit();
+                    _$scope.$apply();
+                    expect(_mockUserService.list).toHaveBeenCalled();
+                    expect(vm.teachers).toEqual({id:'1'});
+                });
 
                 it('Should run $onInit function error case',function(){
                     var vm = _$controller;

@@ -32,12 +32,17 @@
                     expect(_$uibModalInstance.close).toHaveBeenCalled();
                 })
 
-
                 it('should call cancel function', function(){
                      spyOn(_$uibModalInstance,'dismiss').and.callThrough();
                     _$controller.cancel();
                     expect(_$uibModalInstance.dismiss).toHaveBeenCalled();
                 });
+
+                it('Should run else modalTitle',function(){
+                    var vm = _$controller;
+                    vm.setModalTitle(undefined);
+                    expect(vm.modalTitle).toEqual('Add Student');
+                })
             })
         })
     }

@@ -3,9 +3,9 @@
         angular.module('MockApp')
             .component('address',{
                 template:
-                    'Street: {{$ctrl.model.street}}<b>,</b> '+
-                    '   City: {{$ctrl.model.city}}<b>,</b> '+
-                    '   Zipcode: {{$ctrl.model.zipcode}} ',
+                    '<b>Street</b> : {{$ctrl.model.street}}<br/> '+
+                    '<b>City</b>: {{$ctrl.model.city}}<br/>'+
+                    '<b>Zipcode</b>: {{$ctrl.model.zipcode}} ',
                 bindings:{
                     model: '=',
                 }

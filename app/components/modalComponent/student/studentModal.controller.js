@@ -8,10 +8,20 @@
         function StudentModalController($scope, $uibModalInstance, StudentService, newStudent) {
             var vm = this;
 
-            if(newStudent)
-                vm.modalTitle="Edit Student";
-            else
-                vm.modalTitle="Add Student";
+            vm.setModalTitle = setModalTitle;
+            vm.setModalTitle(newStudent);
+
+            function setModalTitle(student){
+                if(student)
+                    vm.modalTitle="Edit Student";
+                else
+                    vm.modalTitle="Add Student";
+            }
+
+            // if(newStudent)
+            //     vm.modalTitle="Edit Student";
+            // else
+            //     vm.modalTitle="Add Student";
 
             vm.newstudent=angular.copy(newStudent);
 

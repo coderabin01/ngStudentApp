@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">25% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>4/16</span>
+        <span class='fraction'>16/16</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/4</span>
+        <span class='fraction'>2/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">25% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/4</span>
+        <span class='fraction'>4/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">25% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>4/16</span>
+        <span class='fraction'>16/16</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -80,26 +80,26 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -110,27 +110,27 @@
         angular.module('MockApp')
             .directive('formatPhone',formatPhone);
 &nbsp;
-<span class="fstat-no" title="function not covered" >        function formatPhone(){</span>
-<span class="cstat-no" title="statement not covered" >            var directive = {</span>
+        function formatPhone(){
+            var directive = {
                 link: link,
                 restrict: 'EA'
             };
-<span class="cstat-no" title="statement not covered" >            return directive;</span>
+            return directive;
 &nbsp;
-<span class="fstat-no" title="function not covered" >            function link(scope, elem, attrs) {</span>
-<span class="cstat-no" title="statement not covered" >                console.log('format phone directive');</span>
+            function link(scope, elem, attrs) {
+                console.log('format phone directive');
 &nbsp;
-<span class="cstat-no" title="statement not covered" >                elem.bind('keyup',<span class="fstat-no" title="function not covered" >function(e){</span></span>
-<span class="cstat-no" title="statement not covered" >                    var value = elem.val()</span>
-<span class="cstat-no" title="statement not covered" >                    value = value.toString();</span>
-<span class="cstat-no" title="statement not covered" >                    value = value.replace(/[^0-9]/g, '');</span>
-<span class="cstat-no" title="statement not covered" >                    if(value.length &gt; 5){</span>
-<span class="cstat-no" title="statement not covered" >                        value = value.slice(0,5) + "-" + value.slice(5);</span>
+                elem.bind('keyup',function(e){
+                    var value = elem.val()
+                    value = value.toString();
+                    value = value.replace(/[^0-9]/g, '');
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if(value.length &gt; 5){
+                        value = value.slice(0,5) + "-" + value.slice(5);
                     }
-<span class="cstat-no" title="statement not covered" >                    if(value.length &gt; 11){</span>
-<span class="cstat-no" title="statement not covered" >                        value = value.slice(0,11);</span>
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if(value.length &gt; 11){
+                        value = value.slice(0,11);
                     }
-<span class="cstat-no" title="statement not covered" >                    elem.val(value);</span>
+                    elem.val(value);
                 })
             }
         }
@@ -142,7 +142,7 @@
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Mar 02 2018 17:16:37 GMT+0545 (Nepal Standard Time)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Mar 02 2018 17:57:31 GMT+0545 (Nepal Standard Time)
 </div>
 </div>
 <script src="../prettify.js"></script>

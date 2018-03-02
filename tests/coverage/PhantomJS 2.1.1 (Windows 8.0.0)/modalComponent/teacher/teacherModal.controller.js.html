@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">26.67% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>4/15</span>
+        <span class='fraction'>18/18</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>2/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">25% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/4</span>
+        <span class='fraction'>5/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">26.67% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>4/15</span>
+        <span class='fraction'>18/18</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -88,30 +88,30 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">3×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -124,31 +124,31 @@
 &nbsp;
         TeacherModalController.$inject = ['$uibModalInstance', 'TeacherService', 'newTeacher'];
 &nbsp;
-<span class="fstat-no" title="function not covered" >        function TeacherModalController($uibModalInstance, TeacherService, newTeacher) {</span>
-<span class="cstat-no" title="statement not covered" >            var vm = this;</span>
+        function TeacherModalController($uibModalInstance, TeacherService, newTeacher) {
+            var vm = this;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            if(newTeacher)</span>
-<span class="cstat-no" title="statement not covered" >                vm.modalTitle="Edit Teacher";</span>
-            else
-<span class="cstat-no" title="statement not covered" >                vm.modalTitle="Add Teacher";</span>
+            vm.setModalTitle = setModalTitle;
 &nbsp;
-            // vm.setModalTitle = function(newStudent){
-            //     if(newTeacher)
-            //         vm.modalTitle="Edit Teacher";
-            //     else
-            //         vm.modalTitle="Add Teacher";
-            // }
+            vm.setModalTitle(newTeacher);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            vm.nTeacher=angular.copy(newTeacher);</span>
+            function setModalTitle(teacher){
+                if(teacher){
+                    vm.modalTitle = 'Edit Teacher';
+                }else{
+                    vm.modalTitle = 'Add Teacher';
+                }
+            }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            vm.ok = <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >                TeacherService.save(vm.nTeacher);</span>
-<span class="cstat-no" title="statement not covered" >                vm.teacherName = vm.nTeacher.name;</span>
-<span class="cstat-no" title="statement not covered" >                $uibModalInstance.close({teacherName:vm.teacherName,actionType:vm.modalTitle});</span>
+            vm.nTeacher=angular.copy(newTeacher);
+&nbsp;
+            vm.ok = function () {
+                TeacherService.save(vm.nTeacher);
+                vm.teacherName = vm.nTeacher.name;
+                $uibModalInstance.close({teacherName:vm.teacherName,actionType:vm.modalTitle});
             };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            vm.cancel = <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >                $uibModalInstance.dismiss('cancel');</span>
+            vm.cancel = function () {
+                $uibModalInstance.dismiss('cancel');
             };
         }
     }
@@ -160,7 +160,7 @@
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Mar 02 2018 17:16:37 GMT+0545 (Nepal Standard Time)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Mar 02 2018 17:57:31 GMT+0545 (Nepal Standard Time)
 </div>
 </div>
 <script src="../../prettify.js"></script>
