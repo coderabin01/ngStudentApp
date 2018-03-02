@@ -32,7 +32,7 @@
                     var modalInstance = $uibModal.open({
                         ariaLabelledBy: 'modal-title',
                         ariaDescribedBy: 'modal-body',
-                        templateUrl: 'components/modalComponent/studentModal.html',
+                        templateUrl: 'components/modalComponent/student/studentModal.html',
                         controller: 'StudentModalController as studentModalCtrl',
                         size: 'md',
                         resolve:{
@@ -58,7 +58,7 @@
                     var modalInstance = $uibModal.open({
                         ariaLabelledBy: 'modal-title',
                         ariaDescribedBy: 'modal-body',
-                        templateUrl: 'components/modalComponent/deleteModal.html',
+                        templateUrl: 'components/modalComponent/student/deleteModal.html',
                         controller: 'DeleteModalController as delModalCtrl',
                         size: 'md',
                         resolve:{
