@@ -20,11 +20,15 @@ module.exports = function(config) {
             //spec files
 
             // 'specs/components/student/student.controller.spec.js',
-            'specs/components/student/student.service.spec.js',
+            // 'specs/components/student/student.service.spec.js',
             // 'specs/components/modalComponent/studentModal.controller.spec.js',
             // 'specs/components/modalComponent/deleteModal.controller.spec.js',
-            // 'specs/components/user/user.controller.spec.js',
-            'specs/components/user/user.service.spec.js',
+            'specs/components/teacher/teacher.controller.spec.js',
+            // 'specs/components/teacher/teacher.service.spec.js',
+            //
+            // 'specs/components/modalComponent/teacher/deleteTeacherModal.controller.spec.js',
+            // 'specs/components/modalComponent/teacher/teacherModal.controller.spec.js',
+            // 'specs/components/directives/format-phone.spec.js',
         ],
 
         autoWatch: true,
@@ -68,6 +72,10 @@ module.exports = function(config) {
             dir : 'coverage/'
         },
 
+        browserConsoleLogOptions: {
+            terminal: true,
+            level: ""
+        }
         // ngHtml2JsPreprocessor: {
         //     stripPrefix: '../app/',
         //     moduleName: 'dir-templates'

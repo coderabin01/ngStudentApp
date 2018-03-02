@@ -2,14 +2,14 @@
     function () {
         'use strict';
         angular.module('MockApp')
-            .service('UserService', UserService);
+            .service('TeacherService', TeacherService);
 
-        UserService.$inject = ['$http','$q'];
+        TeacherService.$inject = ['$http','$q'];
         
-        function UserService($http , $q) {
+        function TeacherService($http , $q) {
                 var uid = 1;
                 var vm = this;
-                var students=[];
+                vm.teachers=[];
 
                 this.list = function(){
                     var deferred = $q.defer();
@@ -18,9 +18,9 @@
                         url: 'https://jsonplaceholder.typicode.com/users'
                     }).then(function (response){
                         var results = response.data;
-                        students = angular.copy(results);
-                        uid = students.length;
-                        deferred.resolve(students);
+                        vm.teachers = response.data;
+                        uid = vm.teachers.length;
+                        deferred.resolve(results);
                     },function (error){
                         deferred.reject(error);
                     });
@@ -30,20 +30,20 @@
                 this.save = function(newstudent){
                     if(newstudent.id == null) {
                         newstudent.id = ++uid;
-                        students.push(newstudent);
+                        vm.teachers.push(newstudent);
                     }
                     else{
-                        angular.forEach(students, function(eachStudent, index){
-                            if(eachStudent.id == newstudent.id)
-                                students[index] = newstudent;
+                        angular.forEach(vm.teachers, function(eachTeacher, index){
+                            if(eachTeacher.id == newstudent.id)
+                                vm.teachers[index] = newstudent;
                         })
                     }
                 }
 
                 this.delete = function (id) {
-                    angular.forEach(students,function(eachStudent,index){
-                        if(eachStudent.id == id)
-                            students.splice(index,1);
+                    angular.forEach(vm.teachers,function(eachTeacher,index){
+                        if(eachTeacher.id == id)
+                            vm.teachers.splice(index,1);
                     })
                 }
         }

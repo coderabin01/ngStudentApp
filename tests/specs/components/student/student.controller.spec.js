@@ -34,6 +34,12 @@
                     expect(vm.message).toBe(false);
                 })
 
+                it('Should run the reverseSortFunc function',function(){
+                    var vm = _$controller();
+                    vm.reverseSortFunc();
+                    expect(vm.sortReverse).toBe(true);
+                })
+
                 //Writing test for open function
                 it('Testing open function for true case', function () {
                     var vm  = _$controller();

@@ -1,24 +1,31 @@
 (
     function(){
         angular.module('MockApp')
-            .controller('UserModalController', UserModalController);
+            .controller('TeacherModalController', TeacherModalController);
 
-        UserModalController.$inject = ['$scope', '$uibModalInstance', 'UserService', 'newStudent'];
+        TeacherModalController.$inject = ['$uibModalInstance', 'TeacherService', 'newTeacher'];
 
-        function UserModalController($scope, $uibModalInstance, UserService, newStudent) {
+        function TeacherModalController($uibModalInstance, TeacherService, newTeacher) {
             var vm = this;
 
-            if(newStudent)
-                vm.modalTitle="Edit Student";
+            if(newTeacher)
+                vm.modalTitle="Edit Teacher";
             else
-                vm.modalTitle="Add Student";
+                vm.modalTitle="Add Teacher";
 
-            vm.newstudent=angular.copy(newStudent);
+            // vm.setModalTitle = function(newStudent){
+            //     if(newTeacher)
+            //         vm.modalTitle="Edit Teacher";
+            //     else
+            //         vm.modalTitle="Add Teacher";
+            // }
+
+            vm.nTeacher=angular.copy(newTeacher);
 
             vm.ok = function () {
-                UserService.save(vm.newstudent);
-                vm.studentName = vm.newstudent.name;
-                $uibModalInstance.close({studentName:vm.studentName,actionType:vm.modalTitle});
+                TeacherService.save(vm.nTeacher);
+                vm.teacherName = vm.nTeacher.name;
+                $uibModalInstance.close({teacherName:vm.teacherName,actionType:vm.modalTitle});
             };
 
             vm.cancel = function () {

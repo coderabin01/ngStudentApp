@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for directives\format-phone.js</title>
+    <title>Code coverage report for modalComponent\student\studentModal.controller.js</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../prettify.css" />
-    <link rel="stylesheet" href="../base.css" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../sort-arrow-sprite.png);
+            background-image: url(../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -16,18 +16,18 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../index.html">all files</a> / <a href="index.html">directives/</a> format-phone.js
+      <a href="../../index.html">all files</a> / <a href="index.html">modalComponent/student/</a> studentModal.controller.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">25% </span>
+        <span class="strong">26.67% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>4/16</span>
+        <span class='fraction'>4/15</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/4</span>
+        <span class='fraction'>0/2</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">25% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>1/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">25% </span>
+        <span class="strong">26.67% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>4/16</span>
+        <span class='fraction'>4/15</span>
       </div>
     </div>
   </div>
@@ -73,32 +73,30 @@
 28
 29
 30
-31
-32</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+31</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -108,34 +106,33 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(
     function(){
         angular.module('MockApp')
-            .directive('formatPhone',formatPhone);
+            .controller('StudentModalController', StudentModalController);
 &nbsp;
-<span class="fstat-no" title="function not covered" >        function formatPhone(){</span>
-<span class="cstat-no" title="statement not covered" >            var directive = {</span>
-                link: link,
-                restrict: 'EA'
+        StudentModalController.$inject = ['$scope', '$uibModalInstance', 'StudentService', 'newStudent'];
+&nbsp;
+<span class="fstat-no" title="function not covered" >        function StudentModalController($scope, $uibModalInstance, StudentService, newStudent) {</span>
+<span class="cstat-no" title="statement not covered" >            var vm = this;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if(newStudent)</span>
+<span class="cstat-no" title="statement not covered" >                vm.modalTitle="Edit Student";</span>
+            else
+<span class="cstat-no" title="statement not covered" >                vm.modalTitle="Add Student";</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            vm.newstudent=angular.copy(newStudent);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            vm.ok = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                StudentService.save(vm.newstudent);</span>
+<span class="cstat-no" title="statement not covered" >                vm.studentName = vm.newstudent.fname +" "+ vm.newstudent.lname;</span>
+<span class="cstat-no" title="statement not covered" >                $uibModalInstance.close({studentName:vm.studentName,actionType:vm.modalTitle});</span>
             };
-<span class="cstat-no" title="statement not covered" >            return directive;</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >            function link(scope, elem, attrs) {</span>
-<span class="cstat-no" title="statement not covered" >                console.log('format phone directive');</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >                elem.bind('keyup',<span class="fstat-no" title="function not covered" >function(e){</span></span>
-<span class="cstat-no" title="statement not covered" >                    var value = elem.val()</span>
-<span class="cstat-no" title="statement not covered" >                    value = value.toString();</span>
-<span class="cstat-no" title="statement not covered" >                    value = value.replace(/[^0-9]/g, '');</span>
-<span class="cstat-no" title="statement not covered" >                    if(value.length &gt; 5){</span>
-<span class="cstat-no" title="statement not covered" >                        value = value.slice(0,5) + "-" + value.slice(5);</span>
-                    }
-<span class="cstat-no" title="statement not covered" >                    if(value.length &gt; 11){</span>
-<span class="cstat-no" title="statement not covered" >                        value = value.slice(0,11);</span>
-                    }
-<span class="cstat-no" title="statement not covered" >                    elem.val(value);</span>
-                })
-            }
+<span class="cstat-no" title="statement not covered" >            vm.cancel = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                $uibModalInstance.dismiss('cancel');</span>
+            };
         }
     }
 )();
+&nbsp;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
@@ -145,7 +142,7 @@
   generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Mar 02 2018 17:16:37 GMT+0545 (Nepal Standard Time)
 </div>
 </div>
-<script src="../prettify.js"></script>
+<script src="../../prettify.js"></script>
 <script>
 window.onload = function () {
         if (typeof prettyPrint === 'function') {
@@ -153,6 +150,6 @@ window.onload = function () {
         }
 };
 </script>
-<script src="../sorter.js"></script>
+<script src="../../sorter.js"></script>
 </body>
 </html>

@@ -14,11 +14,6 @@
 
             //States in the application
             $stateProvider
-                .state('login',{
-                    url:'/login',
-                    templateUrl:'components/login/login.html',
-                    controller:'LoginController as loginCtrl'
-                })
 
                 .state('student',{
                     url:'/student',
@@ -26,11 +21,11 @@
                     controller:'StudentController as studentCtrl'
                 })
 
-                .state('user',{
-                    url:'/user',
-                    templateUrl:'components/user/user.html',
-                    controller:'UserController as userCtrl'
-                });
+                .state('teacher',{
+                    url:'/teacher',
+                    templateUrl:'components/teacher/teacher.html',
+                    controller:'TeacherController as teacherCtrl'
+                })
 
                 // .state('test',{
                 //     url:'/test',

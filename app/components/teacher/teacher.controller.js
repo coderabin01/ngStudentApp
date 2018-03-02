@@ -1,26 +1,23 @@
 (
     function () {
         angular.module('MockApp')
-            .controller('UserController', UserController);
+            .controller('TeacherController', TeacherController);
 
-        UserController.$inject = ['$uibModal','UserService'];
+        TeacherController.$inject = ['$uibModal','TeacherService'];
 
-        function UserController($uibModal , UserService) {
+        function TeacherController($uibModal , TeacherService) {
 
                 var vm = this;
                 vm.sortType = 'name';
                 vm.sortReverse = false ;
                 vm.message = '';
-
+                //vm.teachers = [];
 
                 //Function to show the list of students
                 vm.$onInit = function () {
-
-                    var getList = UserService.list();
-
-                    getList.then(
+                    TeacherService.list().then(
                         function (response) {
-                            vm.students = response;
+                            vm.teachers = response;
                         },
                         function (error) {
                             console.log(error);
@@ -39,41 +36,41 @@
                 }
 
                 //open Add Student & Edit Student Modal
-                vm.open = function (student) {
+                vm.open = function (teacher) {
                     var modalInstance = $uibModal.open({
                         ariaLabelledBy: 'modal-title',
                         ariaDescribedBy: 'modal-body',
                         templateUrl: 'components/modalComponent/teacher/teacherModal.html',
-                        controller: 'UserModalController as teacherModalCtrl',
+                        controller: 'TeacherModalController as teacherModalCtrl',
                         size: 'md',
                         resolve:{
-                            newStudent:function(){
-                                return student;
+                            newTeacher:function(){
+                                return teacher;
                             }
                         }
                     });
 
                     modalInstance.result.then(function (result) {
-                        if(result.actionType == 'Add Student')
-                            vm.message = result.studentName + " has been added";
+                        if(result.actionType == 'Add Teacher')
+                            vm.message = result.teacherName + " has been added";
                         else
-                            vm.message = result.studentName + " has been edited";
+                            vm.message = result.teacherName + " has been edited";
                     }, function () {
                         console.info('Modal dismissed at: ' + new Date());
                     });
                 }
 
                 //open Delete Student Modal
-                vm.openDelete = function (student) {
+                vm.openDelete = function (teacher) {
                     var modalInstance = $uibModal.open({
                         ariaLabelledBy: 'modal-title',
                         ariaDescribedBy: 'modal-body',
-                        templateUrl: 'components/modalComponent/deleteModal.html',
-                        controller: 'DeleteModalController as delModalCtrl',
+                        templateUrl: 'components/modalComponent/teacher/deleteTeacherModal.html',
+                        controller: 'DeleteTeacherModalController as delTeacherModalCtrl',
                         size: 'md',
                         resolve:{
-                            stud:function(){
-                                return student;
+                            Teacher:function(){
+                                return teacher;
                             }
                         }
                     });
@@ -87,13 +84,14 @@
                 }
 
                 //Function to open Delete Modal on click of delete
-                vm.delete = function(id){
-                    vm.openDelete(id);
+                vm.delete = function(teacher){
+                    console.log(teacher);
+                    vm.openDelete(teacher);
                 }
 
                 //Function to open Edit Modal on click of edit
-                vm.edit = function(student){
-                    vm.open(student);
+                vm.edit = function(teacher){
+                    vm.open(teacher);
                 }
 
         }
