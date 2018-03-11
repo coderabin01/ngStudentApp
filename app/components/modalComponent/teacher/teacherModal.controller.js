@@ -6,6 +6,9 @@
         TeacherModalController.$inject = ['$uibModalInstance', 'TeacherService', 'newTeacher'];
 
         function TeacherModalController($uibModalInstance, TeacherService, newTeacher) {
+            console.log("TeacherModalController");
+            console.log(newTeacher);
+
             var vm = this;
 
             vm.setModalTitle = setModalTitle;

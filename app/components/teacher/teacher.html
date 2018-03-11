@@ -8,18 +8,22 @@
 
     <div class="row">
         <div class="col-sm-12 col-lg-6">
-            <button type="button" class="btn btn-default" ng-click="teacherCtrl.open()">Add Teacher</button>
+            <!--<button type="button" class="btn btn-default" ng-click="teacherCtrl.open()">Add Teacher</button>-->
+            <teacher-modal modal-type="add" file-name="teacherModal" button-title="Add" button-class="btn btn-default"></teacher-modal>
         </div>
         <div class="col-sm-12 col-lg-6">
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Search" ng-model="search">
             </div>
-
         </div>
     </div>
 
     <div class="">
-        <div uib-alert class="alert-success" close="teacherCtrl.closeThisAlert()" ng-if="teacherCtrl.message">{{teacherCtrl.message}}</div>
+        <div ng-controller = "modalDirectiveController as modalDCtrl">
+            {{modalDCtrl.message}}
+        </div>
+        {{teacherCtrl.message}}
+        <!--<div uib-alert class="alert-success" close="teacherCtrl.closeThisAlert()" ng-if="teacherCtrl.message">{{teacherCtrl.message}}</div>-->
     </div>
 
     <table class="table table-striped table-bordered" style="margin-top:20px">
@@ -47,7 +51,11 @@
             <td>{{ teacher.name }}</td>
             <td>{{ teacher.email }}</td>
             <td><address model = "teacher.address"></address> </td>
-            <td> <a ng-click="teacherCtrl.edit(teacher)">edit</a> | <a href="javascript:void(0)" ng-click="teacherCtrl.delete(teacher)">delete</a></td>
+            <td>
+                <teacher-modal modal-type="edit" file-name="teacherModal" button-title="DerecEdit" modal-value="teacher" button-class="" message="teacherCtrl.message"></teacher-modal>|
+                <teacher-modal modal-type="delete" file-name="deleteTeacherModal" button-title="DerecDelete" modal-value="teacher" button-class=""></teacher-modal>
+                <a href="javascript:void(0)" ng-click="teacherCtrl.delete(teacher)">delete</a>
+            </td>
         </tr>
         <tr ng-show="(teacherCtrl.teachers | filter: search).length == 0">
             <td colspan="5"><center><b>No results !!!!</b></center></td>

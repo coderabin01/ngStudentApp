@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for modalComponent\teacher\teacherModal.controller.js</title>
+    <title>Code coverage report for directives\teacher-modal.js</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../prettify.css" />
-    <link rel="stylesheet" href="../../base.css" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../sort-arrow-sprite.png);
+            background-image: url(../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -16,32 +16,32 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../index.html">all files</a> / <a href="index.html">modalComponent/teacher/</a> teacherModal.controller.js
+      <a href="../index.html">all files</a> / <a href="index.html">directives/</a> teacher-modal.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>18/18</span>
+        <span class='fraction'>6/9</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">25% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>5/5</span>
+        <span class='fraction'>1/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>18/18</span>
+        <span class='fraction'>6/9</span>
       </div>
     </div>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -77,80 +77,71 @@
 32
 33
 34
-35
-36
-37
-38</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+35</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">3×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">4×</span>
-<span class="cline-any cline-yes">3×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Created by maddog on 3/4/2018.
+ */
+&nbsp;
+(
     function(){
         angular.module('MockApp')
-            .controller('TeacherModalController', TeacherModalController);
+            .directive('teacherModal',teacherModal);
 &nbsp;
-        TeacherModalController.$inject = ['$uibModalInstance', 'TeacherService', 'newTeacher'];
-&nbsp;
-        function TeacherModalController($uibModalInstance, TeacherService, newTeacher) {
-            var vm = this;
-&nbsp;
-            vm.setModalTitle = setModalTitle;
-&nbsp;
-            vm.setModalTitle(newTeacher);
-&nbsp;
-            function setModalTitle(teacher){
-                if(teacher){
-                    vm.modalTitle = 'Edit Teacher';
-                }else{
-                    vm.modalTitle = 'Add Teacher';
-                }
+<span class="fstat-no" title="function not covered" >        function teacherModal(){</span>
+<span class="cstat-no" title="statement not covered" >            var directive = {</span>
+                restrict: 'EA',
+                link:link,
+                templateUrl:'components/directives/templates/teacherModal.html',
+                controller:'modalDirectiveController'
             }
 &nbsp;
-            vm.nTeacher=angular.copy(newTeacher);
+<span class="cstat-no" title="statement not covered" >            return directive;</span>
 &nbsp;
-            vm.ok = function () {
-                TeacherService.save(vm.nTeacher);
-                vm.teacherName = vm.nTeacher.name;
-                $uibModalInstance.close({teacherName:vm.teacherName,actionType:vm.modalTitle});
-            };
+<span class="fstat-no" title="function not covered" >            function link(scope,elem,attrs){</span>
 &nbsp;
-            vm.cancel = function () {
-                $uibModalInstance.dismiss('cancel');
-            };
+            }
         }
+&nbsp;
+        angular.module('MockApp')
+            .controller('modalDirectiveController', modalDirectiveController);
+&nbsp;
+<span class="fstat-no" title="function not covered" >        function modalDirectiveController(){</span>
+<span class="cstat-no" title="statement not covered" >            console.log("ctrl of teacher modal directive");</span>
+        }
+&nbsp;
     }
 )();
 &nbsp;
@@ -163,7 +154,7 @@
   generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Mar 04 2018 12:26:05 GMT+0545 (Nepal Standard Time)
 </div>
 </div>
-<script src="../../prettify.js"></script>
+<script src="../prettify.js"></script>
 <script>
 window.onload = function () {
         if (typeof prettyPrint === 'function') {
@@ -171,6 +162,6 @@ window.onload = function () {
         }
 };
 </script>
-<script src="../../sorter.js"></script>
+<script src="../sorter.js"></script>
 </body>
 </html>

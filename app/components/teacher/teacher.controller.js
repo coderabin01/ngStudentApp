@@ -3,15 +3,20 @@
         angular.module('MockApp')
             .controller('TeacherController', TeacherController);
 
-        TeacherController.$inject = ['$uibModal','TeacherService'];
+        TeacherController.$inject = ['$uibModal','TeacherService', '$scope'];
 
-        function TeacherController($uibModal , TeacherService) {
+        function TeacherController($uibModal , TeacherService ,$scope) {
 
                 var vm = this;
                 vm.sortType = 'name';
                 vm.sortReverse = false ;
-                vm.message = '';
-                //vm.teachers = [];
+                //vm.message ='abcd';
+
+               // $scope.$on("updateMessage", function(event, data){
+               //   if(data){
+               //       vm.message = data;
+               //   }
+               // });
 
                 //Function to show the list of students
                 vm.$onInit = function () {
